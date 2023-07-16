@@ -28,17 +28,20 @@ function install {
 ##################
 ## apt packages
 install curl
+install wget
 install git
 install htop
 install jq
 install tree
-install vim
-install wget
+install neofetch
+install neovim
 install terminator
+install tmux
 install gnome-tweaks
 install build-essential
 install timeshift
 install preload
+install minicom
 
 ## snap packages
 snap install code
@@ -47,6 +50,7 @@ snap install telegram-desktop
 snap install vlc
 snap install spotify
 snap install discord
+snap install obsidian
 
 #################################
 ## Run all scripts in programs ##
