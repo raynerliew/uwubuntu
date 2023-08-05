@@ -121,15 +121,16 @@ fi
 #########
 alias vim=nvim
 
+##########
+## TMUX ##
+##########
+alias tmux="tmux -f ${HOME}/.config/tmux/tmux.conf"
+
 #########
 ## GIT ##
 #########
 source ~/.bash/git-prompt.sh # Show git branch name at command prompt
 export GIT_PS1_SHOWCOLORHINTS=true # Option for git-prompt.sh to show branch name in color
-
-# Terminal Prompt:
-# Include git branch, use PROMPT_COMMAND (not PS1) to get color output (see git-prompt.sh for more)
-#export PROMPT_COMMAND='__git_ps1 "\w" "\n\\\$ "' # Git branch (relies on git-prompt.sh)
 
 ############# 
 ## COLOURS ## 
@@ -138,14 +139,12 @@ alias ls='ls --color=auto'
 #export PS1="\[$(tput setaf 33)\]\u\[$(tput setaf 141)\]@\[$(tput setaf 202)\]\h \[$(tput setaf 141)\]\w \[$(tput sgr0)\]$ "
 #export PS1="\[$(tput setaf 33)\]\u\[$(tput setaf 31)\]@\[$(tput setaf 118)\]\h \[$(tput setaf 141)\]\w \[$(tput sgr0)\] $ "
 export PS1='\[$(tput setaf 33)\]\u\[$(tput setaf 31)\]@\[$(tput setaf 42)\]\h \[$(tput setaf 141)\]\w \[$(tput sgr0)\]$(__git_ps1 " (%s)")\r\n$ \[\e[0;37m\]'
-#PROMPT_DIRTRIM=1
 
 #########
 ## ROS ##
 #########
-alias noetic="source /opt/ros/noetic/setup.bash; echo ""Success"""
-alias foxy="source /opt/ros/foxy/setup.bash; echo ""Success"""
-alias galactic="source /opt/ros/galactic/setup.bash; echo ""Success"""
+#alias noetic="source /opt/ros/noetic/setup.bash; echo ""Success"""
+alias humble="source /opt/ros/humble/setup.bash; echo ""Success"""
 
 ### Start ROS workspace ##
 # ros_distro="noetic"
@@ -153,17 +152,5 @@ alias galactic="source /opt/ros/galactic/setup.bash; echo ""Success"""
 # alias ros1-start="$ros_distro \
 # && cd ~/$ws_directory/catkin_ws/ && source devel/setup.bash \
 # && echo ""Started ROS $ros_distro in $ws_directory/catkin_ws"""
-ros1_distro="noetic"
-alias ros1-start="$ros1_distro && source devel/setup.bash && echo ""Started ROS $ros1_distro in this workspace"""
-
-##########
-## TMUX ##
-##########
-alias tmux="tmux -f ${HOME}/.config/tmux/tmux.conf"
-
-#########
-## NVM ##
-#########
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#ros1_distro="noetic"
+#alias ros1-start="$ros1_distro && source devel/setup.bash && echo ""Started ROS $ros1_distro in this workspace"""
